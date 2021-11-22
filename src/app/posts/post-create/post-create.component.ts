@@ -20,10 +20,11 @@ export class PostCreateComponent {
       return
     }
     const post: Post = {
+      id: form.value.id,
       title: form.value.title,
       content: form.value.content
     };
-    this.postsService.addPost(form.value.title, form.value.content);
+    this.postsService.addPost(form.value.id, form.value.title, form.value.content);
     form.resetForm();
   }
 }
