@@ -9,4 +9,5 @@ mat-spinner {
 
 input[type="file"] {
   visibility: hidden;
+  margin-bottom: 20px;
 }
