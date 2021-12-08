@@ -1,6 +1,5 @@
 const express = require("express");
 const multer = require("multer");
-const { create } = require("../models/post");
 
 const Post = require("../models/post")
 
