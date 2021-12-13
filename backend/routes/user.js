@@ -32,6 +32,7 @@ router.post("/signup", (req, res, next) => {
 router.post("/login", (req, res, next) => {
   User.findOne({ email: req.body.email })
     .then((user) => {
+      // console.log(user);
       if (!user) {
         return res.status(401).json({
           message: "Auth failed",
@@ -50,8 +51,12 @@ router.post("/login", (req, res, next) => {
         "secret_this_should_be_long_example",
         { expiresIn: "1h" }
       );
+      res.status(200).json({
+        token: token,
+      });
     })
     .catch((err) => {
+      // console.log(err);
       return res.status(401).json({
         message: "Auth failed",
       });
